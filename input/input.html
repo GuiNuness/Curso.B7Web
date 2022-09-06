@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 50px;
+            font-size: 17px;
+        }
+
+        h1 {
+            font-family: sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        input[type=text], textarea, select{
+            padding: 10px;
+            width: 500px;
+            font-size: 15px;
+            border: 1px solid rgb(105, 105, 105);
+            border-radius: 12px;
+            outline: 0;
+            margin-top: 5px;
+        }
+
+        input[type=email]{
+            padding: 10px;
+            width: 500px;
+            font-size: 15px;
+            border: 1px solid rgb(105, 105, 105);
+            border-radius: 12px;
+            outline: 0;
+            margin-top: 5px;
+        }
+
+        textarea{
+            height: 200px;
+            resize: none;
+        }
+
+        button{
+            padding: 10px;
+            border: 1px solid rgb(105, 105, 105);
+            background-color: #eee;
+            border-radius: 12px;
+        }
+
+        button:hover{
+            background-color: rgb(248, 182, 39);
+            border: 3px solid rgb(255, 174, 0);
+            font-size: 15px;
+            font-style: inherit;
+        }
+    </style>
+</head>
+<body>
+    <!--Exercício: formatando formulário-->
+    <section>
+        <form>
+            <h3>Exercício: Formatando Formulário</h3>
+
+            <input type="hidden" name="country" value="user_id"/>
+
+            <label>
+                Nome Completo:<br/>
+                <input type="text" required title="Nome Completo"/>
+            </label>
+
+            <label>
+                Email:<br/>
+                <input type="email" required pattern="(^[a-zA-Z0-9_.+-]+@{a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)">
+            </label>
+
+            <label>
+                Foto:<br/>
+                <input type="file" required/>
+            </label>
+
+            <label>
+                Descrição:<br/>
+                <textarea name="descricao" maxlength="400"></textarea>
+            </label>
+
+            <label> 
+                Categoria<br/>
+                <select name="categoria">
+                    <option value="1">Categoria 1</option>
+                    <option value="2">Categoria 2</option>
+                    <option value="3">Categoria 3</option>
+                    <option value="4">Categoria 4</option>
+                    <option value="5">Categoria 5</option>
+                </select>
+            </label>
+
+            <label>
+                <input type="checkbox" required/>
+                Eu declaro que li e aceito os termos de uso.
+            </label>
+
+            <button>Fazer Cadastro</button>
+        </form>
+    </section>
+    
+    <!--Conteúdo-->
+    <section>
+        <!--Input-->
+        <section>
+            <h1>Input</h1>
+
+            <input type="text"/>
+            <input type="checkbox"/>
+            <input type="radio" name="sexo"/>
+            <input type="radio" name="sexo"/>
+            <input type="submit"/>
+
+            <h3>Variações do text:</h3>
+            <input type="email"/>
+            <input type="password"/>
+            <input type="color"/>
+            <input type="month"/>
+            <input type="number"/>
+            <input type="tel"/>
+            <input type="time"/>
+            <input type="url"/>
+            <input type="week"/>
+        </section>
+        <!--Select-->
+        <section>
+            <h1>Select</h1>
+
+            <select name="ordenacao">
+                <option></option>
+                <option>Mais vendidos</option>
+                <option>Recentes</option>
+            </select>
+        </section>
+        <!--Textarea-->
+        <section>
+            <h1>Textarea</h1>
+
+            <textarea name="mensagem"></textarea>
+        </section>
+        <!--Button-->
+        <section>
+            <h1>Button</h1>
+
+            <button>Envie aqui</button>
+        </section>
+        <!--Label-->
+        <section>
+            <h1>Label</h1>
+
+            <label>
+                Nome Exemplo:
+                <input type="text"/>
+            </label>
+        </section>
+        <!--Fieldset e Legend-->
+        <section>
+            <h1>Fieldset e Legend</h1>
+
+            <p>Usadas para organizar visualmente o formulário fieldset Abre e fecha, cria um conjunto de campos
+                legend Abre e fecha, cria uma legenda para o fieldset O CSS pode ser usado para melhorar
+                a apresentação dessas tags.
+            </p>
+        </section>
+        <!--Validações-->
+        <section>
+            <h1>Validação Nativa</h1>
+
+            <p>Usado para validar as informações de cada campo do formulária.
+                Pode usar através do JavaScript ou de forma nativa que é do prórpio navegador, indo direto na tag.
+                <br/><br/>
+                Principais tipos de validação nativa:<br/>
+                required -> atribui o campo como obrigatório.<br/>
+                minlenght="" -> quantidade mínima de caracteres que é preciso no campo.<br/>
+                maxlenght="" : quanditade máxima de caracteres que é preciso no campo.<br/>
+                step="" -> pula valores.<br/>
+                min="" -> valor mínimo.<br/>
+                max="" -> valor máximo.<br/>
+
+                Obs.:min e max servem tanto para valores de idade por exemplo quanto para datas.<br/>
+
+                pattern="" -> Expressão regular que faz com que o navegador entenda o padrão que é desejado, muito usado em validação de email.
+                expressão regular, exemplo: pattern="(^[a-zA-Z0-9_.+-]+@{a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+            </p>
+        </section>
+        <!--Hidden-->
+        <section>
+            <h1>Hidden</h1>
+
+            <p>hidden -> É enviado sem que o usuário saiba, digamos que queira saber qual o país do usuário, mas sem perguntar para ele.
+                Normalmente é posto no começo do formulário. Geralmente usa-se quando quer editar informações de alguém</p>
+        </section>
+        <!--File-->
+        <section>
+            <h1>File</h1>
+
+            <p>file="" -> É um atributo para anexar algum arquivo ao formulário.<br/>
+                Pode-se dar um tipo de arquivo específico que vai ser aceito, como foto. 
+                <br/>accept="" -> É o atributo para definir o tipo de arquivo aceito.
+                <br/>exemplo: accept="image/*"  /  accept="application/extensão_do_arquivo(pdf)"
+                <br/>É necessário uma propriedade para poder ser enviado arquivos pelo formulário, o atributo é:
+                enctype=""
+            </p>
+            <input type="file" accept="image/*"/>
+        </section>
+    </section>
+</body>
+</html>
